@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subject Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+     
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      background: transparent;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .options label {
+      display: block;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      background-color: #cdcfd1;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .options input {
+      margin-right: 10px;
+    }
+
+    #submit {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2 id="subject-title"></h2>
+    <div id="quiz"></div>
+    <button id="submit"  onclick="start()">Submit</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

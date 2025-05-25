@@ -1,0 +1,691 @@
+
+<style>
+  html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+        @media (max-width: 600px) {
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav a {
+      margin: 0.5em 0 0 0;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(252, 251, 251, 0.8);
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(32, 31, 31, 0.1);
+  }
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+  }
+  nav ul li{
+    display: inline-block;
+    list-style:none ;
+    margin: 10px 20px;
+
+}
+nav ul li a{
+    color: #100c0c;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom:-6px;
+    transition: 0.5s;
+
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+
+  .background{
+        
+        justify-content: center; 
+        margin-top: 50px;       
+        backdrop-filter: blur(60%); 
+  }
+  
+  .background img 
+           { height: 90%; width: 100%;
+           }
+  .background img 
+           {  object-fit: cover;  }
+  
+  .content{
+    position: relative;
+      color:rgb(228, 228, 235);
+      padding: 20px;
+      max-width: 600px;
+      margin: 100px auto;
+      border-radius: 10px;
+      margin-top: -450px; 
+      
+  }
+  h1{
+    font-size: 40px;
+    color:white;
+    display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid transparent;
+      width: 0;
+      animation: typing 4s steps(30, end) infinite alternate, blink 1s step-start infinite;
+    }
+  
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 60ch; } 
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+
+    /* 2nd page*/
+    .parent {
+      display: flexbox;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background-color:white;
+      margin-top: 200px;
+      border-radius: 2px;
+      
+    }
+
+    .child2{
+      flex: 1;
+      padding: 20px;
+      margin: 10px;
+      background-color:white;
+      text-align: center;
+      font-size: 20px;
+      margin-left: -20px;
+    }
+    .steps-container{
+      width: 98%;
+      height:40% ;
+    
+    }
+    .steps-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color:white;
+      
+      box-shadow: 0 4px 6px rgba(3, 2, 3, 0.1);
+    }
+
+    .step {
+      text-align: center;
+      flex: 1;
+    }
+
+    .step img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      
+    }
+    .step img:hover {
+  animation: swell-blink 1s infinite;
+}
+
+@keyframes swell-blink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+    .step p {
+      margin: 0;
+      font-weight: bold;
+      color: #333;
+    }
+         
+    /* 3rd div*/
+
+    .blinking-text {
+      font: 700 28px 'Orbitron', sans-serif;
+      color: #4a4646;
+      text-align: center;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: grid;
+      margin-top: 20px;
+      place-items: center;
+      animation: blink 2.5s infinite;
+      text-shadow: 0 0 5px #ca9393, 0 0 10px #e09090;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .blinking-text:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 10px #574242, 0 0 20px #f0a4a4;
+    }
+    
+    .div3{
+      width: 100%;
+      height: 85%;
+      padding: 40px;
+      background-color: whitesmoke;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .logindiv{
+      
+      display: grid;
+      place-items: center;
+      margin-top: 60px;
+      position: relative;
+       height: 300px;
+       width:500px ;
+      padding: 20px;
+      margin: 100px auto;
+      border-radius: 10px;
+
+    }  
+
+    button {
+      background: #e60000;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background: #cc0000;
+      transform: scale(1.07);
+    }
+    /* 4th div*/
+    .div4{
+      width: 100%;
+      height: 70%;
+      padding: 40px;
+      background-color: rgb(230, 222, 222);
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    
+
+    .content1{
+      background-color: whitesmoke;
+      display: grid;
+      place-items: center;
+      margin-top: 60px;
+      position: relative;
+       height: 300px;
+       width:500px ;
+      padding: 20px;
+      margin: 100px auto;
+      border-radius: 10px;
+    }
+    .button1{
+      justify-content: center;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg,rgb(114, 112, 112), grey);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  animation: blink 1s infinite;
+  box-shadow: 0 0 15px whitesmoke;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button1:hover {
+  transform: scale(1.05);
+  animation: none; /* Stop blinking on hover */
+  box-shadow: 0 0 25px black;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+    .child1{
+      box-shadow: 0 4px 6px rgba(3, 2, 3, 0.5);
+}
+
+@media (max-width: 768px) {
+  .header, .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    margin-top: -250px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .parent {
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 100px;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .step img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .div3 {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .logindiv, .content1 {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .div4 {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .div4 img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    animation: none;
+    width: 100%;
+    border-right: none;
+  }
+
+  .button1, button {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+
+  .blinking-text {
+    font-size: 22px;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2em;
+  }
+
+  nav ul li {
+    margin: 8px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .step p {
+    font-size: 14px;
+  }
+}
+
+body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    .container5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1400px; /* Increased from 1200px */
+  max-height: 3000px; /* Increased from 2500px */
+  margin: 60px auto; /* Increased margin */
+  padding: 30px; /* Slightly more padding */
+  gap: 30px; /* More space between elements */
+  background-color:transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+
+    .image-box,
+    .description {
+      flex: 1 1 45%;
+      min-height: 350px;
+      box-sizing: border-box;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.02);
+    }
+
+    .description {
+      background-color: #e3f2fd;
+      border-left: 6px solid #1976d2;
+      padding: 25px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .description h2 {
+      margin-top: 0;
+      color: #0d47a1;
+      font-size: 1.8rem;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-box,
+      .description {
+        flex: 1 1 100%;
+        min-height: auto;
+      }
+
+      .description {
+        border-left: none;
+        border-top: 5px solid #1976d2;
+      }
+
+      .image-box img {
+        height: auto;
+      }
+    }
+
+    /*div 5*/
+     .container5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1400px; /* Increased from 1200px */
+  max-height: 3000px; /* Increased from 2500px */
+  margin: 60px auto; /* Increased margin */
+  padding: 30px; /* Slightly more padding */
+  gap: 30px; /* More space between elements */
+  background-color:transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+
+    .image-box,
+    .description {
+      flex: 1 1 45%;
+      min-height: 350px;
+      box-sizing: border-box;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.02);
+    }
+
+    .description {
+      background-color: #e3f2fd;
+      border-left: 6px solid #1976d2;
+      padding: 25px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .description h2 {
+      margin-top: 0;
+      color: #0d47a1;
+      font-size: 1.8rem;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-box,
+      .description {
+        flex: 1 1 100%;
+        min-height: auto;
+      }
+
+      .description {
+        border-left: none;
+        border-top: 5px solid #1976d2;
+      }
+
+      .image-box img {
+        height: auto;
+      }
+    }
+
+    
+    
+</style>
+<header>
+        <div class="logo">TestMaster</div>
+        <nav>
+          <ul>
+           <li> <a href="#">Home</a></li>
+           <li><a  onclick="about()">About</a></li>
+           <li><a onclick="subject()">Subjects</a>
+          </li>
+          </ul>
+          
+        
+        </nav>
+</header>
+
+<div class="background">
+  <img src="background.jpg" alt="background" style=" filter: blur(8px);">
+</div>
+
+
+<div class="content">
+  <h1> UNLEASH YOUR POTENTIAL</h1>
+  <h2>"Your Testing Adventure Starts Here — Let’s Crush It!"</h2>
+</div>
+
+<!--2nd div-->
+
+<div class="parent">
+  <div class="child2">
+    <h1 style="color: #014751;"> HOW IT WORKS??...</h1><br>
+    <p style="font-weight: bold; color: #014751;font-size: 16px;">Ready to turn your knowledge into achievement? Our platform makes it simple and exciting! Just log in, choose your subject, <br>and take the test—no stress, just progress.Instantly see your results and track how far you’ve come. And the best part? <br>You’ll download a certificate that proudly proves your hard work and dedication. <br>Whether you're learning for school,career, or self-growth, this is your space to shine. Fast. Fun. Future-focused.<br> Start your journey today—because every great accomplishment begins with a single step.<p></div>
+
+  <div class="child1">
+    <div class="steps-container">
+      <div class="step">
+        <img src="p1.jpg" alt="Login In">
+        <p>Login In</p>
+      </div>
+      <div class="step">
+        <img src="p21.jpg" alt="Choose Subject">
+        <p>Choose Subject</p>
+      </div>
+      <div class="step">
+        <img src="p3.png" alt="Give the Test">
+        <p>Give the Test</p>
+      </div>
+      <div class="step">
+        <img src="p4.png" alt="See the Result">
+        <p>See the Result</p>
+      </div>
+      <div class="step">
+        <img src="p5.png" alt="Download Certificate">
+        <p>Download Certificate</p>
+      </div>
+
+    </div>
+  </div>
+  
+</div>
+<!--3rd background--->
+
+
+<div class="blinking-text">WHAT YOU HAVE TO DO NEXT IS LOGIN</div>
+<div class="div3">
+   <div class="logindiv">
+     <h2> Make a account here..</h2>
+     <p style="justify-content: center;margin: 3px 6px 3px 6px;">"To begin the test, please ensure that you have created an account. Registration is required to access and complete the test."</p><br><br>
+     <button onclick="handleLogin()">Proceed to Sign Up</button>
+
+  <script>
+    function handleLogin() {
+      alert("Redirecting you to the sign-up page...");
+       window.location.href = "login.html";
+    }
+  </script>
+
+   </div> 
+   <img src="login12.jpg" style="border-radius: 10px;background-color: #f9f9f9;
+   box-shadow:
+     0 4px 8px rgba(255, 255, 255, 0.5),  /* soft white highlight */
+     0 8px 16px rgba(0, 0, 0, 0.1);       /* soft grey depth */
+   border-radius: 12px;
+   margin: 50px auto;">
+
+
+</div>
+
+<!--4th background-->
+<div class="div4">
+  <img src="3P.webp" alt="image">
+  <div class="content1">
+  <h2>After sign-up what you have to do is..</h2><br>
+  <h2>choosing you favourite subject to test yourself..</h2><br>
+
+  <p style="justify-content: center;margin: 3px 6px 3px 6px;">Ready to shine? Pick your favorite and strongest subject,<br> test your skills, and watch your true potential unfold right <br>before your eyes!</p><br><br><br><br><br>
+
+  <script>
+    
+    function adjustWidth() {
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.width = `calc(100vw - ${scrollbarWidth}px)`;
+}
+window.addEventListener('resize', adjustWidth);
+adjustWidth();
+
+ function about() {
+      window.location.href = "about.html";
+    }
+    function subject() {
+      window.location.href = "dd.html";
+    }
+
+
+  </script>
+  
+</div>
+</div>
+<div class="container5">
+    <div class="image-box">
+      <img id="resultImage" src="https://www.radview.com/wp-content/webp-express/webp-images/uploads/2025/01/file-16.png.webp" alt="Test Completed">
+    </div>
+    <div class="description">
+      <h2>Test Completed</h2>
+      <p>When the test is done now what you have to do is submit the test and Tap on the see result button to view your detailed result and personalized feedback.</p>
+    </div>
+  </div>
+

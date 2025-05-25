@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Online Testing System</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Blurred background */
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    .background img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(12px) brightness(0.6);
+    }
+
+    /* Scrollable content wrapper */
+    .content-wrapper {
+      position: relative;
+      max-width: 800px;
+      height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    /* Sticky heading */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #014f86;
+      z-index: 1;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Scrollable content area */
+    .scrollable-content {
+      padding: 2rem 2.5rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .scrollable-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #012a4a;
+      margin-bottom: 1.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-header {
+        font-size: 1.6rem;
+        padding: 1rem;
+      }
+      .scrollable-content {
+        padding: 1.2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Blurred fixed background -->
+  <div class="background">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80" alt="Seaside Background" />
+  </div>
+
+  <!-- Main content box -->
+  <div class="content-wrapper">
+    <div class="sticky-header">About Our Test-Yourself Testing System</div>
+    <div class="scrollable-content">
+      <p>
+        Our  Testing System is designed to help learners identify and master their strongest subjects. Whether you're a student, a professional, or simply a knowledge enthusiast, our platform allows you to focus your learning efforts efficiently.
+      </p>
+      <p>
+        Start by choosing your subject of strength or interest — from mathematics and science to language and general knowledge. Each test is thoughtfully designed to challenge your skills and help you grow with instant feedback.
+      </p>
+      <p>
+        After completing a test, you'll immediately receive your score along with detailed feedback and performance insights. You can monitor your progress over time, identify areas of improvement, and retake tests to boost your scores.
+      </p>
+      <p>
+        Once you've completed a test successfully, you can download a personalized certificate to showcase your achievement. This certificate can be used to demonstrate your skills in academic, professional, or personal settings.
+      </p>
+      <p>
+        The interface is intuitive and responsive, with a calming, seaside-themed background to keep you relaxed and focused. Whether on desktop or mobile, the experience remains seamless and motivating.
+      </p>
+    </div>
+  </div>
+  <script>
+    
+  </script>
+</body>
+</html>

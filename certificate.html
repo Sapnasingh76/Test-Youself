@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download Certificate</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 50px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .certificate {
+      background-color: #ecf0f1;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .certificate h2 {
+      color: #3498db;
+      font-size: 28px;
+    }
+    .certificate .details {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    .certificate .details p {
+      margin: 10px 0;
+    }
+    .button {
+      background-color: #3498db;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Test Yourself</h1>
+  <div class="certificate">
+    <h2>Certificate of Completion</h2>
+    <div class="details">
+      <p><strong>Subject:</strong> <span id="subject-name"></span></p>
+      <p><strong>Score:</strong> <span id="score"></span> / <span id="total-questions"></span></p>
+      <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
+    </div>
+    <button class="button" id="downloadBtn">Download Certificate</button>
+  </div>
+</div>
+
+<script>
+  // Retrieve the quiz result from localStorage
+  const result = JSON.parse(localStorage.getItem('quizResult'));
+
+  if (result) {
+    // Calculate percentage
+    const percentage = ((result.score / result.total) * 100).toFixed(2);
+
+    // Update the certificate content
+    document.getElementById('subject-name').textContent = result.subject;
+    document.getElementById('score').textContent = result.score;
+    document.getElementById('total-questions').textContent = result.total;
+    document.getElementById('percentage').textContent = percentage;
+
+    // Automatically trigger the certificate download
+    window.onload = () => {
+      const doc = new jsPDF();
+      doc.setFont('Helvetica', 'normal');
+
+      // Adding the certificate content to the PDF
+      doc.text('Certificate of Completion', 105, 40, null, null, 'center');
+      doc.setFontSize(18);
+      doc.text(`Test Yourself: ${result.subject}`, 105, 60, null, null, 'center');
+      doc.setFontSize(14);
+      doc.text(`Score: ${result.score} / ${result.total}`, 105, 80, null, null, 'center');
+      doc.text(`Percentage: ${percentage}%`, 105, 100, null, null, 'center');
+      doc.text('Congratulations on completing the quiz!', 105, 120, null, null, 'center');
+
+      // Save the generated certificate as PDF and trigger the download
+      doc.save('certificate.pdf');
+    };
+  } else {
+    alert('No quiz result found. Please complete the quiz first.');
+  }
+</script>
+
+<!-- Include jsPDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f9ff;
+      padding: 30px;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .summary {
+      margin-bottom: 20px;
+    }
+    .correct { color: green; }
+    .wrong { color: red; }
+    .question-block {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Quiz Result</h1>
+  <div id="summary" class="summary"></div>
+  <div id="details"></div>
+  <button class="btn" onclick="downloadCertificate()">Download Certificate</button>
+</div>
+
+<script>
+  const result = JSON.parse(localStorage.getItem('quizResult'));
+  const summaryDiv = document.getElementById('summary');
+  const detailsDiv = document.getElementById('details');
+
+  if (!result) {
+    summaryDiv.innerHTML = "<p>No quiz data found. Please take a quiz first.</p>";
+  } else {
+    const correctCount = result.attemptedQuestions.filter(q => q.isCorrect).length;
+    const wrongCount = result.attemptedQuestions.length - correctCount;
+
+    summaryDiv.innerHTML = `
+      <h3>Subject: ${result.subject}</h3>
+      <p><strong>Score:</strong> ${result.score} / ${result.total}</p>
+      <p><strong>Attempted:</strong> ${result.attemptedQuestions.filter(q => q.selected !== null).length}</p>
+      <p><strong>Correct:</strong> <span class="correct">${correctCount}</span></p>
+      <p><strong>Wrong:</strong> <span class="wrong">${wrongCount}</span></p>
+    `;
+
+    result.attemptedQuestions.forEach((q, i) => {
+      const div = document.createElement('div');
+      div.className = 'question-block';
+      div.innerHTML = `
+        <div><strong>Q${i + 1}:</strong> ${q.question}</div>
+        <div>Your Answer: <span class="${q.isCorrect ? 'correct' : 'wrong'}">${q.selected ?? "Not attempted"}</span></div>
+        <div>Correct Answer: <strong>${q.correct}</strong></div>
+      `;
+      detailsDiv.appendChild(div);
+    });
+  }
+
+  function downloadCertificate() {
+    window.location.href = "certificate.html";
+  }
+</script>
+
+</body>
+</html>
